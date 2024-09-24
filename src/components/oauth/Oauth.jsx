@@ -27,7 +27,7 @@ const Oauth = () => {
 
       // Send payload to the backend API
       const response = await axios.post(
-        "https://propcodebackendadminpaneltesting.onrender.com/api/googlesignin",
+        "https://propcodebackendadminpaneltesting.onrender.com/api/auth/googlesignin",
         payload
       );
       console.log("Response", response);
