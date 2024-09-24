@@ -1,0 +1,104 @@
+/* General styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .navbar-logo{
+    width: 300px;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 60px;
+    background:#135c8f; /* Translucent black */
+    color: white;
+    position: relative;
+    z-index: 30;
+    width: 100%;
+    border-radius:  0   0  0 80px;
+  }
+  
+  /* Desktop links */
+  .navbar-links {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+  }
+  
+  .navbar-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-links a:hover {
+    color: #52abbe; /* Link hover color */
+  }
+  
+  /* Toggle icon (hamburger) */
+  .navbar-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+  }
+  
+  .navbar-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    transition: all 0.3s ease;
+  }
+  
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    .navbar {
+      position: relative;
+      padding: 10px 20px;
+    }
+  
+    .navbar-links {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 90%;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.9); /* Full screen overlay */
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+    }
+  
+    .navbar-links.open {
+      transform: translateX(0);
+    }
+  
+    .navbar-toggle {
+      display: flex;
+    }
+  
+    /* Animate hamburger to cross */
+    .navbar-toggle.open .bar:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+  
+    .navbar-toggle.open .bar:nth-child(2) {
+      opacity: 0;
+    }
+  
+    .navbar-toggle.open .bar:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
+    .navbar-logo{
+      width: 140px;
+    }
+  }
+  
